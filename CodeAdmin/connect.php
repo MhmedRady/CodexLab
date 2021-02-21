@@ -1,0 +1,22 @@
+
+<?php
+
+$dsn  = 'mysql:host=localhost;dbname=codex';
+$admin = 'M7MED';
+$Adminpass = '**01147**';
+$option = array(
+
+PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+
+);
+
+try {
+  $con = new PDO($dsn, $admin, $Adminpass, $option);
+  $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo '';
+}
+
+catch(PDOException $e) {
+  echo "failed To Con" . $e->getMessage();
+}
+ // header('location:dashboard.php');
